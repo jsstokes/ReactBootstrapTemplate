@@ -2,7 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './base/header.component';
 import Select from 'react-select';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 const navitems = [
   {
     "title":"NavItem 1",
@@ -23,11 +28,17 @@ const options = [
 
 function App(props) {
   return (
+    <Router>
     <div className="App">
-      <Header title="Test App Title" navItems={navitems}/>
-      <div>Application goes here</div>
-      <Select options={options}/>
-    </div>
+        <Header title="Test App Title" navItems={navitems}/>
+        <div>Application goes here</div>
+        <Select options={options}/>
+      </div>
+
+      <Routes>
+        <Route path="/"></Route>
+      </Routes>
+    </Router>
   );
 }
 
