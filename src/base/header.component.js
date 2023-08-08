@@ -11,9 +11,10 @@ function Header(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {props.navItems.map(item => (
-
-            <Nav.Link href={item.ref}>{item.title}</Nav.Link>
+            {props.navItems.map((item, idx) => (
+              <div key={idx}>
+                <Nav.Link href={item.ref} key={idx}>{item.title}</Nav.Link>
+              </div>
             ))}
             {/* <Nav.Link href="#link">Link</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
